@@ -1,0 +1,5 @@
+# Only index.html and brookline_infographic.pdf belong in this repo
+*
+!index.html
+!brookline_infographic.pdf
+!.gitignore
