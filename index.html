@@ -286,6 +286,17 @@
   .closing blockquote{background:transparent;border:none;color:#fff;font-size:19.5px;padding:0;max-width:840px;margin:0 auto;line-height:1.55;}
   .closing .cite{color:var(--gold);margin-top:16px;}
 
+  /* Subtle Scroll Motion */
+  .fade-in-on-view{
+    opacity:0;
+    transform:translateY(14px);
+    transition:opacity .4s ease-out, transform .4s ease-out;
+  }
+  .fade-in-on-view.visible{
+    opacity:1;
+    transform:translateY(0);
+  }
+
   footer{margin-top:44px;background:#e9e4db;border-top:3px solid var(--navy);padding:32px 0;color:var(--muted);font-size:12.5px;}
   footer .wrap{text-align:center;}
   footer strong{color:var(--navy);}
@@ -319,6 +330,7 @@
   @media (prefers-reduced-motion: reduce){
     html{scroll-behavior:auto;}
     *{transition-duration:.01ms !important;animation-duration:.01ms !important;animation-iteration-count:1 !important;}
+    .fade-in-on-view{opacity:1 !important;transform:none !important;}
   }
 </style>
 </head>
@@ -387,24 +399,24 @@
   </div>
 
   <!-- 1. WHO WE ARE -->
-  <section id="who">
+  <section id="who" class="fade-in-on-view">
     <p class="kicker">Who We Are</p>
     <h2>Assessment Methodology &amp; Scope</h2>
     <p class="sec-sub">Commissioned by the Town of Brookline and Council on Aging, this study was produced by the Center for Social &amp; Demographic Research on Aging (CSDRA) at UMass Boston to align municipal planning with older residents' needs.</p>
     
     <div class="methodology-pipeline">
       <div class="m-step">
-        <div class="m-num"><span data-count="2259">0</span></div>
+        <div class="m-num">2,259</div>
         <div class="m-lbl">Survey Respondents</div>
         <div class="m-sub">17% response rate across Brookline</div>
       </div>
       <div class="m-step">
-        <div class="m-num"><span data-count="7">0</span></div>
+        <div class="m-num">7</div>
         <div class="m-lbl">Key Informant Interviews</div>
         <div class="m-sub">Municipal officials &amp; community leaders</div>
       </div>
       <div class="m-step">
-        <div class="m-num"><span data-count="4">0</span></div>
+        <div class="m-num">4</div>
         <div class="m-lbl">Focus Groups</div>
         <div class="m-sub">41 older adult participants</div>
       </div>
@@ -417,7 +429,7 @@
   </section>
 
   <!-- 2. KEY DEMOGRAPHICS -->
-  <section id="demographics">
+  <section id="demographics" class="fade-in-on-view">
     <p class="kicker">Key Demographics</p>
     <h2>A Growing Older Population</h2>
     <p class="sec-sub">Brookline's population age 60 and older is sizeable and expected to continue growing steadily, based on U.S. Census data, the American Community Survey (2024), and UMass Donahue Institute projections.</p>
@@ -441,24 +453,24 @@
     <div class="stat-grid c3" style="margin-top:18px;">
       <div class="stat">
         <span class="ic-badge"><svg class="ic" aria-hidden="true"><use href="#i-users"/></svg></span>
-        <div class="big"><span data-count="21">0</span>%</div>
+        <div class="big">21%</div>
         <div class="lab">of Brookline's 63,266 total residents are age 60+</div>
       </div>
       <div class="stat">
         <span class="ic-badge"><svg class="ic" aria-hidden="true"><use href="#i-home"/></svg></span>
-        <div class="big"><span data-count="42">0</span>%</div>
+        <div class="big">42%</div>
         <div class="lab">of residents age 80+ live alone (vs. 25% of those in their 60s)</div>
       </div>
       <div class="stat">
         <span class="ic-badge"><svg class="ic" aria-hidden="true"><use href="#i-access"/></svg></span>
-        <div class="big"><span data-count="39">0</span>%</div>
+        <div class="big">39%</div>
         <div class="lab">of residents age 75+ report at least one disability</div>
       </div>
     </div>
   </section>
 
   <!-- 3. FINANCIAL PRESSURES -->
-  <section id="financial">
+  <section id="financial" class="fade-in-on-view">
     <p class="kicker">Financial Pressures</p>
     <h2>Financial Insecurity &amp; Housing Expenses</h2>
     <p class="sec-sub">Financial insecurity, driven largely by property taxes and housing costs, is among the primary concerns reported by older residents.</p>
@@ -469,13 +481,13 @@
       <div class="fin-theme-card">
         <h3><span class="ic-badge gold"><svg class="ic" aria-hidden="true"><use href="#i-home"/></svg></span> Housing Costs</h3>
         <div class="fin-hero-stat">
-          <div class="num"><span data-count="50">0</span>%</div>
+          <div class="num">50%</div>
           <div class="lbl">of renters age 65+ spend 30% or more of income on housing costs</div>
           <div class="vis-bar-bg"><div class="vis-bar-fill" style="width:50%"></div></div>
         </div>
         <div class="fin-sub-metrics">
           <div class="fin-sub-item">
-            <div class="s-num"><span data-count="37">0</span>%</div>
+            <div class="s-num">37%</div>
             <div class="s-lbl">wrote in about cost-of-living concerns (taxes, maintenance, utilities)</div>
           </div>
           <div class="fin-sub-item">
@@ -488,7 +500,7 @@
       <div class="fin-theme-card">
         <h3><span class="ic-badge navy"><svg class="ic" aria-hidden="true"><use href="#i-dollar"/></svg></span> Income &amp; Basic Needs</h3>
         <div class="fin-hero-stat">
-          <div class="num"><span data-count="20">0</span>%</div>
+          <div class="num">20%</div>
           <div class="lbl">lacked finances for at least one basic necessity in the past 12 months</div>
           <div class="vis-bar-bg"><div class="vis-bar-fill" style="width:20%"></div></div>
         </div>
@@ -507,13 +519,13 @@
       <div class="fin-theme-card">
         <h3><span class="ic-badge"><svg class="ic" aria-hidden="true"><use href="#i-wrench"/></svg></span> Home Maintenance</h3>
         <div class="fin-hero-stat">
-          <div class="num"><span data-count="45">0</span>%</div>
+          <div class="num">45%</div>
           <div class="lbl">need home repairs over next 5 years to safely remain in their homes</div>
           <div class="vis-bar-bg"><div class="vis-bar-fill" style="width:45%"></div></div>
         </div>
         <div class="fin-sub-metrics">
           <div class="fin-sub-item">
-            <div class="s-num"><span data-count="14">0</span>%</div>
+            <div class="s-num">14%</div>
             <div class="s-lbl">of those needing home repairs reported they cannot afford them</div>
           </div>
           <div class="fin-sub-item">
@@ -531,7 +543,7 @@
   </section>
 
   <!-- 4. SOCIAL WELLNESS -->
-  <section id="social">
+  <section id="social" class="fade-in-on-view">
     <p class="kicker">Social Connection</p>
     <h2>Social Wellness &amp; Engagement</h2>
     <p class="sec-sub">Findings indicate that older adults living alone benefit from community connection and programs offering opportunities to engage in person.</p>
@@ -539,12 +551,12 @@
     <div class="stat-grid c4">
       <div class="stat">
         <span class="ic-badge"><svg class="ic" aria-hidden="true"><use href="#i-home"/></svg></span>
-        <div class="big"><span data-count="42">0</span>%</div>
+        <div class="big">42%</div>
         <div class="lab">of respondents age 80+ live alone (vs. 25% of those in their 60s)</div>
       </div>
       <div class="stat">
         <span class="ic-badge"><svg class="ic" aria-hidden="true"><use href="#i-userx"/></svg></span>
-        <div class="big"><span data-count="19">0</span>%</div>
+        <div class="big">19%</div>
         <div class="lab">reported feeling excluded — 33% of them cited age as the primary reason</div>
       </div>
       <div class="stat">
@@ -554,14 +566,14 @@
       </div>
       <div class="stat">
         <span class="ic-badge"><svg class="ic" aria-hidden="true"><use href="#i-activity"/></svg></span>
-        <div class="big"><span data-count="22">0</span>%</div>
+        <div class="big">22%</div>
         <div class="lab">reported being affected by substance misuse (18% affected by suicide)</div>
       </div>
     </div>
   </section>
 
   <!-- 5. CAREGIVING -->
-  <section id="caregiving">
+  <section id="caregiving" class="fade-in-on-view">
     <p class="kicker">Caregiving</p>
     <h2>Caregiver Experiences &amp; Demands</h2>
     <p class="sec-sub">Older residents experience changing physical and health conditions, and caregivers to older adults report significant challenges managing care responsibilities.</p>
@@ -569,17 +581,17 @@
     <div class="stat-grid c3">
       <div class="stat">
         <span class="ic-badge"><svg class="ic" aria-hidden="true"><use href="#i-heart"/></svg></span>
-        <div class="big"><span data-count="41">0</span>%</div>
+        <div class="big">41%</div>
         <div class="lab">provided care or assistance to a disabled or frail person in the past 5 years</div>
       </div>
       <div class="stat">
         <span class="ic-badge"><svg class="ic" aria-hidden="true"><use href="#i-layers"/></svg></span>
-        <div class="big"><span data-count="50">0</span>%</div>
+        <div class="big">50%</div>
         <div class="lab">of caregivers are ages 60–69 — the largest cohort, caring for both aging parents and family</div>
       </div>
       <div class="stat">
         <span class="ic-badge"><svg class="ic" aria-hidden="true"><use href="#i-scale"/></svg></span>
-        <div class="big"><span data-count="57">0</span>%</div>
+        <div class="big">57%</div>
         <div class="lab">of caregivers reported caregiving was challenging to balance with other responsibilities</div>
       </div>
     </div>
@@ -590,7 +602,7 @@
   </section>
 
   <!-- 6. TRANSPORTATION & ACCESSIBILITY -->
-  <section id="transport">
+  <section id="transport" class="fade-in-on-view">
     <p class="kicker">Transportation &amp; Accessibility</p>
     <h2>Mobility &amp; Community Infrastructure</h2>
     <p class="sec-sub">When asked, residents reported the following transportation barriers and community accessibility findings:</p>
@@ -599,7 +611,7 @@
       <div class="trans-card">
         <span class="ic-badge navy"><svg class="ic" aria-hidden="true"><use href="#i-bus"/></svg></span>
         <div>
-          <div class="big-num"><span data-count="48">0</span>%</div>
+          <div class="big-num">48%</div>
           <h3>Transportation Challenges</h3>
           <p>48% of survey respondents reported experiencing at least one transportation barrier in Brookline.</p>
         </div>
@@ -608,7 +620,7 @@
       <div class="trans-card">
         <span class="ic-badge gold"><svg class="ic" aria-hidden="true"><use href="#i-activity"/></svg></span>
         <div>
-          <div class="big-num"><span data-count="16">0</span>%</div>
+          <div class="big-num">16%</div>
           <h3>Missed Medical Care</h3>
           <p>16% of non-driving respondents missed, cancelled, or rescheduled a medical appointment due to transit barriers.</p>
         </div>
@@ -633,7 +645,7 @@
   </section>
 
   <!-- 7. SENIOR CENTER & COMMUNICATIONS -->
-  <section id="center">
+  <section id="center" class="fade-in-on-view">
     <p class="kicker">Senior Center &amp; Communications</p>
     <h2>Participation, Awareness &amp; Outreach</h2>
     <p class="sec-sub">The Brookline Senior Center is an invaluable community resource. Survey findings highlight strong community interest alongside significant opportunities to expand awareness and reach non-participating residents.</p>
@@ -686,7 +698,7 @@
   </section>
 
   <!-- 8. STRATEGIC RECOMMENDATIONS -->
-  <section id="recommendations">
+  <section id="recommendations" class="fade-in-on-view">
     <p class="kicker">Strategic Recommendations</p>
     <h2>Strategic Recommendations from the Executive Summary</h2>
     
@@ -742,7 +754,7 @@
   </section>
 
   <!-- CLOSING QUOTE -->
-  <div class="closing">
+  <div class="closing fade-in-on-view">
     <blockquote>
       "I'm sure you all are doing excellent work but for folks like me who do not need or access your offerings you need to publicize your programs so that they reach folks like me."
       <span class="cite">— Brookline survey respondent</span>
@@ -780,7 +792,7 @@
     document.querySelectorAll('main section[id]').forEach(function(s){ spy.observe(s); });
   })();
 
-  // Animated Counter Logic (respects prefers-reduced-motion)
+  // Animated Counter Logic ONLY for Key Proportional/Growth Moments
   (function(){
     var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
     var counters = document.querySelectorAll('[data-count]');
@@ -819,6 +831,25 @@
     }, {threshold:0.3});
 
     counters.forEach(function(counter){ observer.observe(counter); });
+  })();
+
+  // Subtle Scroll Fade-In Reveal
+  (function(){
+    var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    var elements = document.querySelectorAll('.fade-in-on-view');
+    if(reduce){
+      elements.forEach(function(el){ el.classList.add('visible'); });
+      return;
+    }
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(e){
+        if(e.isIntersecting){
+          e.target.classList.add('visible');
+          io.unobserve(e.target);
+        }
+      });
+    }, {threshold:0.12});
+    elements.forEach(function(el){ io.observe(el); });
   })();
 
   // Animate Bar Charts on View
